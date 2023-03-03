@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Album Responsivo - vs 1</title>		<meta name="robots" content="index, follow" />
+		<script type="text/javascript" src="js/album_carousel.js"></script>
+		<link rel="stylesheet" href="css/album_carousel.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			function start_nav(){
+				let arr_imgs = ['gol.jpg','fox.jpg','agile.jpg','sandero.jpg' ];
+				let qtde = arr_imgs.length;
+
+				for(i=0;i<qtde;i++){
+					document.getElementById('imagens').value += arr_imgs[i]+',';
+				}
+				
+				document.getElementById('qtde').value = qtde; 
+				document.getElementById('foto').src = 'img/'+arr_imgs[0]; 
+				
+				console.log(i);
+			}
+		</script>
+	</head>	
+	
+	<body>
+				<div class="content_carousel">			<nav class="navBotoes">				<span id="boxPrev"><img class="btLeft" id="btPrev" src="img/bt-prev-off.png" alt="" onclick="prev();" /></span>				<span id="boxNext"><img class="btRight" id="btNext" src="img/bt-next.png" onclick="next();" /></span>			</nav>			<img class="imgAlbum" id="foto" src="" />			
+			
+			
+		</div>
+		<input type="hidden" class="parametros" id="imagens" value="" />
+		<input type="hidden" class="parametros" id="ProximaImagem" value="1" />
+		<input type="hidden" class="parametros" id="qtde" value="" />
+		
+		<script>start_nav();</script>
+		
+	</body>	
+</html>
